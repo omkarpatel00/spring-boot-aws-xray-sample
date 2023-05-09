@@ -5,7 +5,7 @@ pipeline {
       APP_NAME = 'my-java-app'
       ECR_REPO = 'my-ecr-repo'
       ECR_REGION = 'ap-southeast-1'
-      APP = 'java-Xray'
+      APP = 'java-xray'
       IMAGE_TAG='java-${BUILD_NUMBER}'
     }
     stages {

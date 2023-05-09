@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/omkarpatel00/-spring-boot-aws-xray-sample.git'
+                git branch: 'base', url: 'https://github.com/omkarpatel00/spring-boot-aws-xray-sample.git'
             }
         }
         

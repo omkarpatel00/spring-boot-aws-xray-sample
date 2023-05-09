@@ -11,7 +11,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application using Maven
-RUN ./mvnw package
+RUN ./mvn package
 
 # Expose port 8080 to the outside world
 EXPOSE 8080

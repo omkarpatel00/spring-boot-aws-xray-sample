@@ -17,7 +17,7 @@ pipeline {
         stage('Build an image') {
             steps {
                 sh 'mvn clean install'
-                sh "docker build -t java-xray-${app} ."
+                sh "docker build -t op-${app} ."
             }
         }
         stage('Push to ECR') {

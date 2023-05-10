@@ -4,17 +4,14 @@ FROM openjdk:8-jdk-alpine
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the pom.xml file to the container at /app
-COPY pom.xml .
+#we will provide the jar file as argument
+ARG JAR_FILE=target/spring-boot-xray-demo-0.0.1-SNAPSHOT.jar
 
-# Copy the rest of the application code to the container at /app
-COPY src ./src
+#Add the application or jar file inside my container
+ADD ${JAR_FILE} spring-boot-xray-demo.jar
 
-# Build the application using Maven
-# RUN ./mvn package
-
-# Expose port 8080 to the outside world
+# Expose port 8090 to the outside world
 EXPOSE 8090
 
-# Set the default command to run when the container starts
-CMD ["java", "-jar", "./target/spring-boot-xray-demo-0.0.1-SNAPSHOT.jar"]
+#Run the jar file
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/spring-boot-xray-demo.jar"]

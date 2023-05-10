@@ -14,4 +14,4 @@ ADD ${JAR_FILE} spring-boot-xray-demo.jar
 EXPOSE 8090
 
 #Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/spring-boot-xray-demo.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-xray-demo.jar"]

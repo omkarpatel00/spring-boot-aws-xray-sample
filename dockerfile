@@ -14,7 +14,7 @@ COPY src ./src
 # RUN ./mvn package
 
 # Expose port 8080 to the outside world
-EXPOSE 8080
+EXPOSE 8090
 
 # Set the default command to run when the container starts
 CMD ["java", "-jar", "./target/spring-boot-xray-demo-0.0.1-SNAPSHOT.jar"]
